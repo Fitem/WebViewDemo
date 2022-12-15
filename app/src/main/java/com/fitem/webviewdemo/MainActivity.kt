@@ -29,13 +29,13 @@ class MainActivity : AppCompatActivity() {
         // 启用javascript
         webView.settings.javaScriptEnabled = true
         webView.settings.useWideViewPort = true
-        /* 通过注入JavascriptInterface */
+        /* 方法二：通过注入JavascriptInterface */
         webView.addJavascriptInterface(AppJSBridge(webView), "appJsBridge")
 
         /* 加载url */
         webView.loadUrl("file:///android_asset/index.html")
 
-        /* 直接加载javascript */
+        /* 方法一：直接加载javascript */
 //        // 在WebView中注册JavaScript函数
 //        webView.loadUrl("javascript:function myFunction() { console.log('hello world!') }")
 //        // 在原生代码中调用JavaScript函数

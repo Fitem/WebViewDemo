@@ -7,7 +7,7 @@ import android.widget.Toast
 import com.genlot.webviewdemo.BuildConfig
 
 /**
- * Created by LeiGuangwu on 2022/12/15.
+ * Created by Fitem on 2022/12/15.
  */
 class AppJSBridge(val webView: WebView) {
 
