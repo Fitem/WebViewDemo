@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>app</title>
+		<script>
+        function getAppInfo() {
+            getVersionCode();
+            getVersionName();
+            getSystemVersion();
+            isApp();
+        }
+
+        function getVersionCode() {
+            var appVersionCode = appJsBridge.getVersionCode();
+            document.getElementById("app_version_code").innerHTML = "app version code : " + appVersionCode.toString() ;
+        }
+
+        function getVersionName() {
+            var appVersionName = appJsBridge.getVersionName();
+            document.getElementById("app_version_name").innerHTML = "app version name : " + appVersionName.toString();
+        }
+
+        function getSystemVersion() {
+            let systemVersion = appJsBridge.getSystemVersion();
+            document.getElementById("system_version").innerHTML = "system version : " + systemVersion.toString();
+        }
+
+        function isApp() {
+            let isApp = appJsBridge.isApp();
+            document.getElementById("is_app").innerHTML = "is app : " + isApp.toString();
+        }
+
+        function isHome() {
+            return true;
+        }
+
+        function getWebValue() {
+            appJsBridge.getWebValue();
+        }
+		</script>
+	</head>
+	<body>
+		<div>
+			<span id="app_version_code">app version code : </span><br>
+			<span id="app_version_name">app version name : </span><br>
+			<span id="system_version">system version : </span><br>
+			<span id="is_app">is app : </span><br>
+			<button style="margin-top: 20px" onclick="getAppInfo()">测试js调用App获取版本信息</button><br>
+			<button style="margin-top: 20px" onclick="getWebValue()">测试App获取H5数据</button><br>
+		</div>
+	</body>
+</html>
